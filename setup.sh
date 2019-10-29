@@ -13,4 +13,5 @@ port = $PORT\n\
 " > ~/.streamlit/config.toml
 
 
-echo "PORTA USADA:" $PORT - $port
+echo "PORTA USADA:" $PORT
+echo "port:" port
