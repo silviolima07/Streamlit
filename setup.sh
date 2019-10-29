@@ -14,4 +14,4 @@ port = $PORT\n\
 
 
 echo "PORTA USADA:" $PORT
-echo "port:" port
+echo "enableCORS:"enableCORS
