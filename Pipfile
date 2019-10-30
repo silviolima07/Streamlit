@@ -6,10 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-lock = "*"
 streamlit = "*"
 pandas = "*"
-gunicorn = "*"
 
 [requires]
 python_version = "3.6"
