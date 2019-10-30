@@ -9,6 +9,7 @@ verify_ssl = true
 lock = "*"
 streamlit = "*"
 pandas = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
