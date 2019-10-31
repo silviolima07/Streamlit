@@ -5,8 +5,8 @@ astor==0.8.0
 attrs==19.3.0
 base58==1.0.3
 blinker==1.4
-boto3==1.10.5
-botocore==1.13.5
+boto3==1.10.6
+botocore==1.13.6
 certifi==2019.9.11
 chardet==3.0.4
 Click==7.0
@@ -14,7 +14,8 @@ decorator==4.4.1
 docutils==0.15.2
 entrypoints==0.3
 enum-compat==0.0.3
-future==0.18.1
+future==0.18.2
+gunicorn==19.9.0
 idna==2.8
 importlib-metadata==0.23
 Jinja2==2.10.3
@@ -26,6 +27,7 @@ numpy==1.17.3
 pandas==0.25.2
 pathtools==0.1.2
 Pillow==6.2.1
+pml==1.20
 protobuf==3.10.0
 pyrsistent==0.15.5
 python-dateutil==2.8.0
