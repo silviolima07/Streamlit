@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bf9f4018bcc79da91d41523a1fa4475fe5894ce2b227b1a6a536c1523df6cd63"
+            "sha256": "07fcfba3e49df60a1915c083a5ffba7d3fd3cc215b4c12507c90685c1f1d62d3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -60,17 +60,17 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:03130f43e15f02af7040946f7d4ebbba410fba5ee210b48ca8ba8407d2960b87",
-                "sha256:0b294a58635ed882a3821854f00264e6b3e65f2114c85c64109ad2280c7d5608"
+                "sha256:2945d8246e4c8875e3ae4aafffd028330ef681efc33e1475c1a805ed42540403",
+                "sha256:3d84311ce0f2fba83810f0e840b08e2b66246fc80dbb0a71fb992116f47b95bd"
             ],
-            "version": "==1.10.5"
+            "version": "==1.10.6"
         },
         "botocore": {
             "hashes": [
-                "sha256:13bf9d0d9b9cda278349c9ba0c35c96570795438d5bd29e5188e110b3f5a5183",
-                "sha256:cfce2c7d6a218d693ed6daa8a41040761e35d7a728d1cf43ae14c4132fb146f3"
+                "sha256:ac1a5caa10e3c4452714b17e6f30f05b4b6e57e0c80b19c1f4d72b234edf6646",
+                "sha256:fa6b9e619423f3891e7c11b98f2183da8173e3fed995271e93fd4a712ef45777"
             ],
-            "version": "==1.13.5"
+            "version": "==1.13.6"
         },
         "certifi": {
             "hashes": [
@@ -124,9 +124,9 @@
         },
         "future": {
             "hashes": [
-                "sha256:858e38522e8fd0d3ce8f0c1feaf0603358e366d5403209674c7b617fa0c24093"
+                "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"
             ],
-            "version": "==0.18.1"
+            "version": "==0.18.2"
         },
         "idna": {
             "hashes": [
@@ -294,6 +294,13 @@
                 "sha256:e9a3edd5f714229d41057d56ac0f39ad9bdba6767e8c888c951869f0bdd129b0"
             ],
             "version": "==6.2.1"
+        },
+        "pml": {
+            "hashes": [
+                "sha256:5fea69795428e157ee10fab49f657a129a7b9179f01b970bc402fdf5380d3012"
+            ],
+            "index": "pypi",
+            "version": "==1.20"
         },
         "protobuf": {
             "hashes": [
