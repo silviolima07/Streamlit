@@ -5,6 +5,7 @@ import os
 from sklearn.preprocessing import OneHotEncoder,LabelEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
+import time
 
 
 
@@ -14,12 +15,12 @@ def main():
     # Titulo
     st.title("	STREAMLIT	")
     st.title("RandonForestClassifier / Titanic")
-    st.markdown("Silvio Lima")
+    st.markdown("## Silvio Lima")
 
     st.sidebar.title("About")
 
     st.sidebar.info(
-    "Streamlit é uma biblioteca do Python que torna fácil construir apps web. Semelhante ao Shiny usado com R.")
+    "Streamlit é uma biblioteca do Python que torna fácil construir apps web. Semelhante ao Shiny usado com R. Veja mais em: https://github.com/streamlit/streamlit e https://streamlit.io/")
 
     # Carregar dataset
     my_dataset = "dataset.csv"
@@ -63,15 +64,20 @@ def main():
     data = [{'Classe': classe, 'Sexo': sexo, 'Embarque':embarque, 'Idade': idade, 'Passagem': passagem}]
 
     df = pd.DataFrame(data)
-
+ 
+    if (classe == "Primeira Classe" and sexo == "Homem" and embarque == "Cherboug" and idade == 20 and passagem == 512):
+        status = "Nada"
      
     status = rfmodel.predict(df)
 
+    time.sleep(1)
+
     if (status == 'Sobreviveu'):
-        st.markdown('## Sobreviveu')
-        st.balloons()
+        st.markdown('# Sobreviveu')
+        #st.balloons()
     else:
-        st.markdown('## Morreu')
+        st.markdown('###### Morreu')
+        st.write(" no acidente")
         
     
     #st.markdown("Parametros do modelo gerado")
