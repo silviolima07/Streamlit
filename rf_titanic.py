@@ -14,7 +14,7 @@ def main():
     
     # Titulo
     st.title("	STREAMLIT	")
-    st.title("RandonForestClassifier / Titanic")
+    st.title("RandomForestClassifier / Titanic")
     st.markdown("## Silvio Lima")
 
     st.sidebar.title("About")
@@ -76,7 +76,7 @@ def main():
         st.markdown('# Sobreviveu')
         #st.balloons()
     else:
-        st.markdown('###### Morreu')
+        st.markdown('# Morreu')
         st.write(" no acidente")
         
     
