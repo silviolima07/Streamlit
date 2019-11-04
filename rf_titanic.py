@@ -2,8 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import os
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder,LabelEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 
@@ -15,7 +14,12 @@ def main():
     # Titulo
     st.title("	STREAMLIT	")
     st.title("RandonForestClassifier / Titanic")
-    st.markdown("Streamlit é um servidor python para web apps.")
+    st.markdown("Silvio Lima")
+
+    st.sidebar.title("About")
+
+    st.sidebar.info(
+    "Streamlit é uma biblioteca do Python que torna fácil construir apps web. Semelhante ao Shiny usado com R.")
 
     # Carregar dataset
     my_dataset = "dataset.csv"
@@ -32,12 +36,8 @@ def main():
             st.write(data.head())
     
     st.text("Modelo gerado para classificar se o passageiro:")
-    st.write("## sobreviveu")
-    st.markdown("ou")
-    st.markdown("## morreu")
-    st.text("Foram aplicados: LabeEncoder, OneHotEncoder e StandarScaler.")
-    st.text("O modelo treinado foi salvo com o pacote pickle (dump e load)")
-    st.markdown("Acurácia: 83.58%")
+    st.write("SOBREVIVEU ou MORREU")
+    st.text("O modelo obteve uma acurácia de 83.58%")
     
     filename = "RFmodel.sav"
     
@@ -45,7 +45,7 @@ def main():
 
     st.markdown("## Selecione as caracteristicas do passageiro")
 
-    classe = st.radio('Classe',('Primeira Classe', 'Segunda Classe', 'Terceira Classe'))
+    classe = st.radio('Classe',('Primeira Classe ', 'Segunda Classe', 'Terceira Classe'))
 
     sexo = st.radio('Sexo',('Homem', 'Mulher'))
 
@@ -55,40 +55,28 @@ def main():
   
     passagem = st.slider('Valor da Passagem',min_value=0, max_value=512, value=100, step=50)
 
-    st.markdown("## Caracteristicas selecionadas")
+    st.markdown("## Caracteristicas selecionadas do passageiro")
 
-    st.write("Classe:", classe)
-
-    st.write("Sexo:", sexo)
-
-    st.write("Cidade de Embarque:", embarque)
-
-    st.write("Idade:", idade)
-
-    st.write("Preço da Passagem:", passagem)
+    st.write(classe,'---', sexo, '---',embarque,'---',idade,"anos",'---','$$',passagem)
+    
 
     data = [{'Classe': classe, 'Sexo': sexo, 'Embarque':embarque, 'Idade': idade, 'Passagem': passagem}]
 
     df = pd.DataFrame(data)
 
-    st.write(df)
+     
+    status = rfmodel.predict(df)
 
-    le = LabelEncoder()
-   
-    df.Classe =   le.fit_transform(df.Classe)
-    df.Sexo   =   le.fit_transform(df.Sexo)
-    df.Embarque = le.fit_transform(df.Embarque)
-
-    oneh = OneHotEncoder(categorical_features=[0,1,2])
-    df = oneh.fit_transform(df).toarray()
-
-    #scaler = StandardScaler()
-    #df = scaler.fit_transform(df)
-   
-    st.write(df)
+    if (status == 'Sobreviveu'):
+        st.markdown('## Sobreviveu')
+        st.balloons()
+    else:
+        st.markdown('## Morreu')
+        
     
-    rfmodel(df)
-
+    #st.markdown("Parametros do modelo gerado")
+    #st.write(rfmodel)
+    
 
 
 if __name__ == '__main__':
