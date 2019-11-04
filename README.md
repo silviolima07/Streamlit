@@ -1,5 +1,5 @@
 # Streamlit
-Aplicações web usando streamlit.
+Aplicações web usando streamlit
 
 # Arquivos requeridos
 1 setup.sh
