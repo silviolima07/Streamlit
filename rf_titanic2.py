@@ -16,14 +16,9 @@ def main():
     
     # Titulo
     st.title("	STREAMLIT APPS	")
- 
+    #st.markdown("## Silvio Lima")
     st.title("RandomForestClassifier / Titanic")
-
-    #my_placeholder = st.empty()
-
-    #my_placeholder.image('titanic.jpeg')
     
-    st.sidebar.markdown("## by Silvio Lima")
 
     st.sidebar.title('EDA & Classificação')
 
@@ -39,21 +34,16 @@ def main():
     my_dataset = "dataset.csv"
     data = ler_dados(my_dataset)
     
+    
+
     if st.sidebar.checkbox("Preview Dataset"):      
-        st.write("Preview - 30 linhas")
-        st.table(data.head(30))
+        st.write("Preview - 100")
+        st.write(data.head(100))
     
     if st.sidebar.checkbox("Distribuiçao dos dados"):      
-        x = st.sidebar.selectbox('Atributo: ', ['Status','Classe', 'Sexo', 'Idade', 'Embarque', 'Passagem'])
+        x = st.sidebar.selectbox('Atributo: ', ['Status','Classe', 'Sexo', 'Idade', 'Embarque', 'Passagem'])      
         st.write("Histograma:  ",x)
-        if (x == 'Idade'):
-            fig1 = px.histogram(data, x=x, hover_data=data.columns, color=x, nbins=20)
-            st.write("Maior Idade: ",data.Idade.max(),"Idade Média: ",'{0:.2f}'.format(data.Idade.mean()), "Menor Idade: ",data.Idade.min() )
-        elif (x == 'Passagem'):
-            fig1 = px.histogram(data, x=x, hover_data=data.columns, color=x, nbins= 100)
-            st.write("Maior Valor: ",data.Passagem.max(),"Valor Médio: ",'{0:.2f}'.format(data.Passagem.mean()), "Menor Valor: ",data.Passagem.min() )
-        else:
-            fig1 = px.histogram(data, x=x, hover_data=data.columns, color=x)
+        fig1 = px.histogram(data, x=x, hover_data=data.columns, color=x)
         st.plotly_chart(fig1)
         
     if st.sidebar.checkbox('Previsão / Classificação'):
