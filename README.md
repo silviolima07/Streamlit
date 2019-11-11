@@ -5,6 +5,5 @@ Aplicações web usando streamlit
 - https://github.com/streamlit/streamlit
 - https://streamlit.io/
 
-# Apps desenvolvidos
+# Apps desenvolvido
 - https://titanic-rf.herokuapp.com/
-- https://corrida-ss.herokuapp.com/
